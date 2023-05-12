@@ -1,34 +1,3 @@
-<?php
-    if (isset($_POST['envoyer'])) {
-        $nom = $_POST['nom'];
-        $mail = $_POST['mail'];
-        $tel = $_POST['tel'];
-        $objet = $_POST['objet'];
-        $message = $_POST['message'];
-
-        $mail_to = "yanou.yehiel@yahoo.com";
-    
-        /* Création du header de l'e-mail */ 
-        $header = "From: no-reply@oncheckcm.com\n";
-        $header .= "MIME-version: 1.0\n";
-        $header .= "Content-type: text/html; charset=utf-8\n";
-        $header .= "Content-Transfer-ncoding: 8bit";
-
-        /* Ajout du message au format HTML */					
-        $contenu = "<h3>Bonjour Yehiel, un nouveau message concernant ton portofolio</h3>
-            <div style='text-align: center; justify-content: center; margin-bottom: 20px;'>
-                <p><b>Nom :</b> $nom</p>
-                <p><b>Mail :</b> $mail</p>
-                <p><b>Téléphone :</b> $tel</p>
-                <p><b>Objet :</b> $objet</p>
-                <p><b>Message :</b> $message</p>
-            </div>
-        ";
-
-        mail($mail_to, 'Réponse à mon portofolio', $contenu, $header);
-    }
-?>
-
 <!doctype html>
 <html lang="fr">
   <head>
